@@ -256,11 +256,11 @@ const HomePage = () => {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-4">
-              Excel Tools Suite
+              DISHUB IDPEL CHECKER
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
-              Transform your Excel data processing with our professional suite of tools. 
-              Compare, analyze, and automate your workflow with precision and speed.
+              Proses excel Anda dengan alat profesional untuk analisis data yang cepat dan akurat.
+              dan Nikmati kemudahan dalam memeriksa data IDPEL serta Stand Lalu Ini langsung dari browser Anda.
             </p>
           </div>
 
