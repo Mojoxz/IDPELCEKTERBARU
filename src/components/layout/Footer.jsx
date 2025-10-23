@@ -1,4 +1,4 @@
-import { FileSpreadsheet, Github, Mail, ChevronRight, Twitter, Linkedin, Instagram } from 'lucide-react';
+import { FileSpreadsheet, Github, Mail, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -18,157 +18,31 @@ const Footer = () => {
       { name: 'Support', path: '/support' },
       { name: 'Privacy Policy', path: '/privacy' },
       { name: 'Terms of Service', path: '/terms' }
-    ],
-    resources: [
-      { name: 'Blog', path: '/blog' },
-      { name: 'Tutorials', path: '/tutorials' },
-      { name: 'API Reference', path: '/api' },
-      { name: 'Community', path: '/community' },
-      { name: 'Status', path: '/status' }
     ]
   };
 
-  const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' }
-  ];
-
   return (
-    <footer className="bg-gray-900 text-gray-300 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600"></div>
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }}></div>
-      </div>
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+    <footer className="bg-gray-900 text-gray-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="space-y-4">
             <Link to="/" className="inline-flex items-center space-x-3 group">
-              <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-2 rounded-lg group-hover:shadow-lg transition-all duration-300">
-                <FileSpreadsheet className="h-6 w-6 text-white" />
-              </div>
+                <div className="group-hover:shadow-lg transition-all duration-300">
+                  <img 
+                    src="/DISHUB SURABAYA.svg" 
+                    alt="DISHUB SURABAYA Logo" 
+                    className="h-16 w-auto" // Memperbesar logo dari h-6 menjadi h-10
+                  />
+                </div>
               <span className="text-xl font-bold text-white">Excel Tools</span>
             </Link>
-            <p className="text-sm leading-relaxed max-w-md">
-              Professional Excel processing tools for data analysis and comparison. 
-              Built with React and modern web technologies to streamline your workflow.
+            <p className="text-sm leading-relaxed">
+              Professional Excel processing tools for data analysis and comparison.
             </p>
             
-            {/* Newsletter Signup */}
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h4 className="text-white font-semibold mb-2">Stay Updated</h4>
-              <p className="text-xs mb-3">Get the latest updates and tips delivered to your inbox</p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="bg-gray-700 text-white px-3 py-2 rounded-l-md text-sm flex-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <button className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-4 py-2 rounded-r-md text-sm font-medium hover:shadow-lg transition-all duration-300">
-                  Subscribe
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Product Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4 flex items-center">
-              <ChevronRight className="h-4 w-4 mr-1 text-blue-400" />
-              Product
-            </h3>
-            <ul className="space-y-2">
-              {footerLinks.product.map((link) => (
-                <li key={link.path}>
-                  <Link 
-                    to={link.path} 
-                    className="text-sm hover:text-blue-400 transition-colors duration-200 flex items-center group"
-                  >
-                    <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-200">
-                      {link.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4 flex items-center">
-              <ChevronRight className="h-4 w-4 mr-1 text-blue-400" />
-              Company
-            </h3>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.path}>
-                  <Link 
-                    to={link.path} 
-                    className="text-sm hover:text-blue-400 transition-colors duration-200 flex items-center group"
-                  >
-                    <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-200">
-                      {link.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources Links */}
-          <div>
-            <h3 className="text-white font-semibold mb-4 flex items-center">
-              <ChevronRight className="h-4 w-4 mr-1 text-blue-400" />
-              Resources
-            </h3>
-            <ul className="space-y-2">
-              {footerLinks.resources.map((link) => (
-                <li key={link.path}>
-                  <Link 
-                    to={link.path} 
-                    className="text-sm hover:text-blue-400 transition-colors duration-200 flex items-center group"
-                  >
-                    <span className="transform translate-x-0 group-hover:translate-x-1 transition-transform duration-200">
-                      {link.name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Contact & Social Section */}
-        <div className="border-t border-gray-800 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <h3 className="text-white font-semibold mb-3">Connect With Us</h3>
-              <div className="flex space-x-2">
-                {socialLinks.map((social) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={social.label}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={social.label}
-                      className="bg-gray-800 p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200 group"
-                    >
-                      <Icon className="h-5 w-5 text-gray-400 group-hover:text-white transition-colors duration-200" />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-            
-            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+            {/* Contact Info */}
+            <div className="flex flex-col space-y-2">
               <a
                 href="mailto:support@exceltools.com"
                 className="flex items-center space-x-2 text-sm hover:text-blue-400 transition-colors duration-200"
@@ -187,10 +61,88 @@ const Footer = () => {
               </a>
             </div>
           </div>
+
+          {/* Product Links */}
+          <div>
+            <h3 className="text-white font-semibold mb-4 flex items-center">
+              <ChevronRight className="h-4 w-4 mr-1 text-blue-400" />
+              Product
+            </h3>
+            <ul className="space-y-2">
+              {footerLinks.product.map((link) => (
+                <li key={link.path}>
+                  <Link 
+                    to={link.path} 
+                    className="text-sm hover:text-blue-400 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company Links */}
+          <div>
+            <h3 className="text-white font-semibold mb-4 flex items-center">
+              <ChevronRight className="h-4 w-4 mr-1 text-blue-400" />
+              Company
+            </h3>
+            <ul className="space-y-2">
+              {footerLinks.company.map((link) => (
+                <li key={link.path}>
+                  <Link 
+                    to={link.path} 
+                    className="text-sm hover:text-blue-400 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Social Links */}
+          <div>
+            <h3 className="text-white font-semibold mb-4">Connect With Us</h3>
+            <div className="flex space-x-3">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="bg-gray-800 p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200"
+              >
+                <Github className="h-5 w-5 text-gray-400 hover:text-white transition-colors duration-200" />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter"
+                className="bg-gray-800 p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200"
+              >
+                <svg className="h-5 w-5 text-gray-400 hover:text-white transition-colors duration-200" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="bg-gray-800 p-2 rounded-lg hover:bg-gray-700 transition-colors duration-200"
+              >
+                <svg className="h-5 w-5 text-gray-400 hover:text-white transition-colors duration-200" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Copyright Section */}
-        <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-800 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400">
             &copy; {currentYear} Excel Tools. All rights reserved.
           </p>
