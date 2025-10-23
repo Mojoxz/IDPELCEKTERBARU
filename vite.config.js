@@ -13,9 +13,15 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor': ['react', 'react-dom', 'react-router-dom'],
-          'xlsx': ['xlsx']
+        manualChunks: (id) => {
+          // Chunk untuk vendor libraries
+          if (id.includes('react') || id.includes('react-dom') || id.includes('react-router-dom')) {
+            return 'vendor';
+          }
+          // Chunk untuk xlsx library
+          if (id.includes('xlsx')) {
+            return 'xlsx';
+          }
         }
       }
     }
