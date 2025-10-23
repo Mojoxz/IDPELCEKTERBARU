@@ -40,12 +40,19 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-2 rounded-lg group-hover:shadow-md transition-all duration-300">
-              <FileSpreadsheet className="h-6 w-6 text-white" />
-            </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">Excel Tools</span>
-          </Link>
+<Link to="/" className="flex items-center space-x-3 group">
+  <div className="p-2 rounded-2xl group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+    <img 
+      src="DISHUB SURABAYA.svg" 
+      alt="Dishub Surabaya Logo" 
+      className="h-10 w-10"
+    />
+  </div>
+   <div className="flex flex-col">
+    <span className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">IDPEL CHECKER</span>
+    <span className="text-xs text-blue-600 font-medium">DISHUB SURABAYA</span>
+  </div>
+</Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
