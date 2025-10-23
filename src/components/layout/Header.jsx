@@ -7,6 +7,12 @@ const Header = () => {
   const [standLaluDropdownOpen, setStandLaluDropdownOpen] = useState(false);
   const [idpelBaruDropdownOpen, setIdpelBaruDropdownOpen] = useState(false);
   const [idpelSamaDropdownOpen, setIdpelSamaDropdownOpen] = useState(false);
+  
+  // Mobile dropdown states
+  const [mobileStandLaluDropdownOpen, setMobileStandLaluDropdownOpen] = useState(false);
+  const [mobileIdpelBaruDropdownOpen, setMobileIdpelBaruDropdownOpen] = useState(false);
+  const [mobileIdpelSamaDropdownOpen, setMobileIdpelSamaDropdownOpen] = useState(false);
+  
   const location = useLocation();
   
   const standLaluRef = useRef(null);
@@ -40,19 +46,19 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-<Link to="/" className="flex items-center space-x-3 group">
-  <div className="p-2 rounded-2xl group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
-    <img 
-      src="DISHUB SURABAYA.svg" 
-      alt="Dishub Surabaya Logo" 
-      className="h-10 w-10"
-    />
-  </div>
-   <div className="flex flex-col">
-    <span className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">IDPEL CHECKER</span>
-    <span className="text-xs text-blue-600 font-medium">DISHUB SURABAYA</span>
-  </div>
-</Link>
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="p-2 rounded-2xl group-hover:scale-105 transition-all duration-300 flex items-center justify-center">
+              <img 
+                src="DISHUB SURABAYA.svg" 
+                alt="Dishub Surabaya Logo" 
+                className="h-10 w-10"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">IDPEL CHECKER</span>
+              <span className="text-xs text-blue-600 font-medium">DISHUB SURABAYA</span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
@@ -248,96 +254,174 @@ const Header = () => {
                 Home
               </Link>
               
-              {/* Mobile Stand Lalu Section */}
-              <div className="px-4 py-2 text-sm font-medium text-gray-900">Stand Lalu</div>
-              <div className="pl-4 space-y-1">
-                <Link
-                  to="/stand-lalu-ini-sbb"
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
-                    isActive('/stand-lalu-ini-sbb')
+              {/* Mobile Stand Lalu Dropdown */}
+              <div>
+                <button
+                  onClick={() => {
+                    setMobileStandLaluDropdownOpen(!mobileStandLaluDropdownOpen);
+                    setMobileIdpelBaruDropdownOpen(false);
+                    setMobileIdpelSamaDropdownOpen(false);
+                  }}
+                  className={`flex items-center justify-between w-full px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isActive('/stand-lalu-ini-sbb') || isActive('/stand-lalu-ini-sbu') || isActive('/stand-lalu-multiple')
                       ? 'bg-blue-50 text-blue-600'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
-                  Stand Lalu Ini (SBB)
-                </Link>
-                <Link
-                  to="/stand-lalu-ini-sbu"
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
-                    isActive('/stand-lalu-ini-sbu')
-                      ? 'bg-blue-50 text-blue-600'
-                      : 'text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  Stand Lalu Ini (SBU)
-                </Link>
-                <Link
-                  to="/stand-lalu-multiple"
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
-                    isActive('/stand-lalu-multiple')
-                      ? 'bg-blue-50 text-blue-600'
-                      : 'text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  Stand Lalu (Multiple)
-                </Link>
+                  <span>Stand Lalu</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileStandLaluDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {mobileStandLaluDropdownOpen && (
+                  <div className="pl-4 mt-1 space-y-1 animate-fade-in">
+                    <Link
+                      to="/stand-lalu-ini-sbb"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setMobileStandLaluDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                        isActive('/stand-lalu-ini-sbb')
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      Stand Lalu Ini (SBB)
+                    </Link>
+                    <Link
+                      to="/stand-lalu-ini-sbu"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setMobileStandLaluDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                        isActive('/stand-lalu-ini-sbu')
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      Stand Lalu Ini (SBU)
+                    </Link>
+                    <Link
+                      to="/stand-lalu-multiple"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setMobileStandLaluDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                        isActive('/stand-lalu-multiple')
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      Stand Lalu (Multiple)
+                    </Link>
+                  </div>
+                )}
               </div>
               
-              {/* Mobile IDPEL Baru Section */}
-              <div className="px-4 py-2 text-sm font-medium text-gray-900">IDPEL Baru</div>
-              <div className="pl-4 space-y-1">
-                <Link
-                  to="/idpel-baru-multiple"
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
-                    isActive('/idpel-baru-multiple')
+              {/* Mobile IDPEL Baru Dropdown */}
+              <div>
+                <button
+                  onClick={() => {
+                    setMobileIdpelBaruDropdownOpen(!mobileIdpelBaruDropdownOpen);
+                    setMobileStandLaluDropdownOpen(false);
+                    setMobileIdpelSamaDropdownOpen(false);
+                  }}
+                  className={`flex items-center justify-between w-full px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isActive('/idpel-baru-multiple') || isActive('/idpel-baru-1sheet')
                       ? 'bg-blue-50 text-blue-600'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
-                  IDPEL Baru (Multiple)
-                </Link>
-                <Link
-                  to="/idpel-baru-1sheet"
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
-                    isActive('/idpel-baru-1sheet')
-                      ? 'bg-blue-50 text-blue-600'
-                      : 'text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  IDPEL Baru (1 Sheet)
-                </Link>
+                  <span>IDPEL Baru</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileIdpelBaruDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {mobileIdpelBaruDropdownOpen && (
+                  <div className="pl-4 mt-1 space-y-1 animate-fade-in">
+                    <Link
+                      to="/idpel-baru-multiple"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setMobileIdpelBaruDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                        isActive('/idpel-baru-multiple')
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      IDPEL Baru (Multiple)
+                    </Link>
+                    <Link
+                      to="/idpel-baru-1sheet"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setMobileIdpelBaruDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                        isActive('/idpel-baru-1sheet')
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      IDPEL Baru (1 Sheet)
+                    </Link>
+                  </div>
+                )}
               </div>
               
-              {/* Mobile IDPEL Sama Section */}
-              <div className="px-4 py-2 text-sm font-medium text-gray-900">IDPEL Sama</div>
-              <div className="pl-4 space-y-1">
-                <Link
-                  to="/idpel-sama-1sheet"
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
-                    isActive('/idpel-sama-1sheet')
+              {/* Mobile IDPEL Sama Dropdown */}
+              <div>
+                <button
+                  onClick={() => {
+                    setMobileIdpelSamaDropdownOpen(!mobileIdpelSamaDropdownOpen);
+                    setMobileStandLaluDropdownOpen(false);
+                    setMobileIdpelBaruDropdownOpen(false);
+                  }}
+                  className={`flex items-center justify-between w-full px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isActive('/idpel-sama-1sheet') || isActive('/idpel-sama-multiple')
                       ? 'bg-blue-50 text-blue-600'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
-                  IDPEL Sama (1 Sheet)
-                </Link>
-                <Link
-                  to="/idpel-sama-multiple"
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
-                    isActive('/idpel-sama-multiple')
-                      ? 'bg-blue-50 text-blue-600'
-                      : 'text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  IDPEL Sama (Multiple)
-                </Link>
+                  <span>IDPEL Sama</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileIdpelSamaDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {mobileIdpelSamaDropdownOpen && (
+                  <div className="pl-4 mt-1 space-y-1 animate-fade-in">
+                    <Link
+                      to="/idpel-sama-1sheet"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setMobileIdpelSamaDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                        isActive('/idpel-sama-1sheet')
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      IDPEL Sama (1 Sheet)
+                    </Link>
+                    <Link
+                      to="/idpel-sama-multiple"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setMobileIdpelSamaDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                        isActive('/idpel-sama-multiple')
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      IDPEL Sama (Multiple)
+                    </Link>
+                  </div>
+                )}
               </div>
             </div>
           </nav>
