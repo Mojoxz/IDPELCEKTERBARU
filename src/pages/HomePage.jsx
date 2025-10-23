@@ -246,9 +246,13 @@ const HomePage = () => {
             <div className="flex justify-center mb-6">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
-                <div className="relative bg-gradient-to-r from-blue-500 to-purple-600 p-3 md:p-4 rounded-2xl shadow-2xl">
-                  <FileSpreadsheet className="h-12 w-12 md:h-16 md:w-16 text-white" />
-                </div>
+                  <div className="relative p-6 md:p-8 rounded-2xl">
+                    <img 
+                      src="DISHUB SURABAYA.svg" 
+                      alt="Dishub Surabaya Logo" 
+                      className="h-24 w-24 md:h-32 md:w-32"
+                    />
+                  </div>
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-4">
