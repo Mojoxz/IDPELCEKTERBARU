@@ -237,7 +237,7 @@ const HomePage = () => {
     : tools.filter(tool => tool.category === activeTab);
 
   return (
-    <div className="min-h-screen bg-white">
+<div className="min-h-screen bg-white">
       {/* Hero Section with Carousel */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-50"></div>
@@ -245,14 +245,17 @@ const HomePage = () => {
           <div className="text-center mb-8 md:mb-12 animate-fade-in">
             <div className="flex justify-center mb-6">
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-30 animate-pulse"></div>
-                  <div className="relative p-6 md:p-8 rounded-2xl">
-                    <img 
-                      src="DISHUB SURABAYA.svg" 
-                      alt="Dishub Surabaya Logo" 
-                      className="h-24 w-24 md:h-32 md:w-32"
-                    />
-                  </div>
+                {/* Perubahan di sini - dari rounded-2xl menjadi rounded-full */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="absolute bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-2xl opacity-30 animate-pulse w-40 h-40 md:w-48 md:h-48"></div>
+                </div>
+                <div className="relative p-6 md:p-8">
+                  <img 
+                    src="DISHUB SURABAYA.svg" 
+                    alt="Dishub Surabaya Logo" 
+                    className="h-24 w-24 md:h-32 md:w-32"
+                  />
+                </div>
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-4">
