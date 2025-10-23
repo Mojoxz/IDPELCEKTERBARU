@@ -615,36 +615,47 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Promotion Section */}
-      <div className="py-12 md:py-20 bg-gradient-to-r from-blue-600 to-purple-700">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl md:rounded-3xl p-8 md:p-12">
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4 md:mb-6">
-              Ready to Transform Your Data Workflow?
-            </h2>
-            <p className="text-lg md:text-xl text-blue-100 mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto">
-              Join thousands of professionals who have revolutionized their Excel data processing. 
-              Start your journey towards more efficient analysis today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-              <Link
-                to="/stand-lalu-ini-sbb"
-                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-white text-blue-600 font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl"
-              >
-                Start Using for Free
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <button className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-transparent border-2 border-white text-white font-bold rounded-xl hover:bg-white/10 transition-all duration-300">
-                <Play className="mr-2 h-5 w-5" />
-                Watch Quick Tour
-              </button>
-            </div>
-            <p className="text-blue-200 mt-4 md:mt-6 text-xs md:text-sm">
-              ✓ No registration required ✓ Process files locally ✓ Export to Excel
-            </p>
-          </div>
+{/* Promotion Section */}
+<div className="py-12 md:py-20 bg-gradient-to-r from-blue-50 to-purple-50">
+  <div className="max-w-4xl mx-auto px-4 text-center">
+    <div className="bg-white rounded-2xl md:rounded-3xl p-8 md:p-12 shadow-xl">
+      <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+        Ready to Transform Your Data Workflow?
+      </h2>
+      <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto">
+        Join thousands of professionals who have revolutionized their Excel data processing. 
+        Start your journey towards more efficient analysis today.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+        <Link
+          to="/stand-lalu-ini-sbb"
+          className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+        >
+          Start Using for Free
+          <ArrowRight className="ml-2 h-5 w-5" />
+        </Link>
+        <button className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-gray-200 text-gray-700 font-bold rounded-xl hover:border-gray-300 hover:bg-gray-50 transition-all duration-300">
+          <Play className="mr-2 h-5 w-5" />
+          Watch Quick Tour
+        </button>
+      </div>
+      <div className="mt-6 md:mt-8 flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base text-gray-600">
+        <div className="flex items-center">
+          <CheckCircle className="h-4 w-4 md:h-5 md:w-5 mr-2 text-green-500" />
+          No registration required
+        </div>
+        <div className="flex items-center">
+          <Shield className="h-4 w-4 md:h-5 md:w-5 mr-2 text-blue-500" />
+          Process files locally
+        </div>
+        <div className="flex items-center">
+          <Download className="h-4 w-4 md:h-5 md:w-5 mr-2 text-purple-500" />
+          Export to Excel
         </div>
       </div>
+    </div>
+  </div>
+</div>
 
       {/* Footer CTA */}
       <div className="py-12 md:py-16 bg-gray-900">
