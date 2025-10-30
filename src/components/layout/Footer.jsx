@@ -35,23 +35,23 @@ const Footer = () => {
                     className="h-16 w-auto" // Memperbesar logo dari h-6 menjadi h-10
                   />
                 </div>
-              <span className="text-xl font-bold text-white">Excel Tools</span>
+              <span className="text-xl font-bold text-white">IDPEL CHECKER</span>
             </Link>
             <p className="text-sm leading-relaxed">
-              Professional Excel processing tools for data analysis and comparison.
+              Tools Untuk membantu anda mengecek Data IDPEL dan juga yang diperlukan.
             </p>
             
             {/* Contact Info */}
             <div className="flex flex-col space-y-2">
               <a
-                href="mailto:support@exceltools.com"
+                href="mailto:firmandhani.23029@mhs.unesa.ac.id"
                 className="flex items-center space-x-2 text-sm hover:text-blue-400 transition-colors duration-200"
               >
                 <Mail className="h-4 w-4" />
-                <span>support@exceltools.com</span>
+                <span>firmandhani.23029@mhs.unesa.ac.id</span>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/Mojoxz/IDPELCEKTERBARU"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-sm hover:text-blue-400 transition-colors duration-200"

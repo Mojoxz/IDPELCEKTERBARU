@@ -100,10 +100,10 @@ const StandLaluIniSBBPage = () => {
             </div>
             <div>
               <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                Cek Data Sama Kolom I dan J
+                Cek Data Stand Lalu dan Stand Ini sama (SBB)
               </h1>
               <p className="text-gray-600 text-lg">
-                Cek baris di mana kolom I dan J memiliki nilai yang sama
+                Cek kolom Stand Lalu dan Stand Ini di file Excel Anda untuk menemukan nilai yang sama.
               </p>
             </div>
           </div>
@@ -113,8 +113,7 @@ const StandLaluIniSBBPage = () => {
             <div className="flex items-center">
               <Info className="h-5 w-5 text-gray-400 mr-3" />
               <p className="text-gray-600 text-sm">
-                Upload file Excel, pilih sheet, dan kami akan menemukan semua baris dengan nilai sama di kolom I dan J. 
-                Hasil menampilkan semua kolom dari A sampai Q.
+                Upload file Excel, pilih sheet, dan kami akan menemukan semua baris dengan nilai stand ini dan stand lalu yang sama
               </p>
             </div>
           </div>
@@ -210,11 +209,11 @@ const StandLaluIniSBBPage = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-amber-500 mr-2">•</span>
-                  Kolom I dan J harus memiliki nilai yang dapat dibandingkan
+                  Kolom I dan J harus berisi stand lalu dan stand ini serta terdapat nilai yang dapat dibandingkan
                 </li>
                 <li className="flex items-start">
                   <span className="text-amber-500 mr-2">•</span>
-                  Hasil akan menampilkan semua kolom dari A sampai Q
+                  Hasil akan menampilkan semua kolom 
                 </li>
               </ul>
             </div>
