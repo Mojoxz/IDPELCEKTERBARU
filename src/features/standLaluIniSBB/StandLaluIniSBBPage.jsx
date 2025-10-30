@@ -113,7 +113,7 @@ const StandLaluIniSBBPage = () => {
             <div className="flex items-center">
               <Info className="h-5 w-5 text-gray-400 mr-3" />
               <p className="text-gray-600 text-sm">
-                Upload file Excel, pilih sheet, dan kami akan menemukan semua baris dengan nilai stand ini dan stand lalu yang sama
+                Upload file Excel, pilih sheet, dan kami akan menemukan semua baris dengan nilai stand ini dan stand lalu yang sama.
               </p>
             </div>
           </div>
@@ -184,7 +184,7 @@ const StandLaluIniSBBPage = () => {
                   <h3 className="text-lg font-semibold text-gray-900">Hasil Ditemukan</h3>
                 </div>
                 <p className="text-gray-600 mb-4">
-                  {processedData.length} baris dengan nilai sama di kolom I dan J
+                  {processedData.length} baris dengan nilai sama di kolom I dan J.
                 </p>
                 <button
                   onClick={handleDownload}
@@ -205,15 +205,15 @@ const StandLaluIniSBBPage = () => {
               <ul className="text-sm text-gray-600 space-y-2">
                 <li className="flex items-start">
                   <span className="text-amber-500 mr-2">•</span>
-                  Pastikan file Excel memiliki format yang benar
+                  Pastikan file Excel memiliki format yang benar.
                 </li>
                 <li className="flex items-start">
                   <span className="text-amber-500 mr-2">•</span>
-                  Kolom I dan J harus berisi stand lalu dan stand ini serta terdapat nilai yang dapat dibandingkan
+                  Kolom I dan J harus berisi stand lalu dan stand ini serta terdapat nilai yang dapat dibandingkan.
                 </li>
                 <li className="flex items-start">
                   <span className="text-amber-500 mr-2">•</span>
-                  Hasil akan menampilkan semua kolom 
+                  Hasil akan menampilkan semua kolom.
                 </li>
               </ul>
             </div>

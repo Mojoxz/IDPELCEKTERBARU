@@ -100,10 +100,10 @@ const StandLaluIniSBUPage = () => {
             </div>
             <div>
               <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                Pemeriksa STAND LALU vs STAND INI
+                Cek Data Stand Lalu ini dan Stand in Sama (SBU)
               </h1>
               <p className="text-gray-600 text-lg">
-                Filter dan tampilkan data di mana STAND LALU tidak sama dengan STAND INI
+                Cek Kolom Stand Lalu dan Stand Ini pada file Excel Anda untuk menemukan nilai yang sama.
               </p>
             </div>
           </div>
@@ -113,8 +113,7 @@ const StandLaluIniSBUPage = () => {
             <div className="flex items-center">
               <Info className="h-5 w-5 text-gray-400 mr-3" />
               <p className="text-gray-600 text-sm">
-                Upload file Excel, pilih sheet, dan kami akan menemukan semua baris dengan nilai berbeda di kolom STAND LALU dan STAND INI. 
-                Hasil menampilkan semua kolom yang tersedia.
+                Upload file Excel, pilih sheet, dan kami akan menemukan semua baris dengan nilai stand ini dan stand lalu sama
               </p>
             </div>
           </div>
@@ -214,7 +213,7 @@ const StandLaluIniSBUPage = () => {
                 </li>
                 <li className="flex items-start">
                   <span className="text-amber-500 mr-2">•</span>
-                  Hasil akan menampilkan semua kolom dari data yang difilter
+                  Hasil akan menampilkan semua kolom 
                 </li>
               </ul>
             </div>
