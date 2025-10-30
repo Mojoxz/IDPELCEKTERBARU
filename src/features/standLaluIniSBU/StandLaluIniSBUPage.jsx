@@ -100,7 +100,7 @@ const StandLaluIniSBUPage = () => {
             </div>
             <div>
               <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                Cek Data Stand Lalu ini dan Stand in Sama (SBU)
+                Cek Data Stand Lalu ini dan Stand ini Sama (SBU)
               </h1>
               <p className="text-gray-600 text-lg">
                 Cek Kolom Stand Lalu dan Stand Ini pada file Excel Anda untuk menemukan nilai yang sama.

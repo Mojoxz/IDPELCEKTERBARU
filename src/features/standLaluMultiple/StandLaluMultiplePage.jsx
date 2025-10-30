@@ -74,10 +74,10 @@ const StandLaluMultiplePage = () => {
             </div>
             <div>
               <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                Pengecek Data SLALWBP = SAHLWBP
+                Cek data Stand Lalu ini dan Stand ini Sama (SBB)
               </h1>
               <p className="text-gray-600 text-lg">
-                Filter data di mana SLALWBP sama dengan SAHLWBP pada multiple sheet (DMP, DKP, NGL, RKT, GDN)
+                Cek Kolom Stand ini dan Stand Lalu sama secara multiple sheet pada file Excel Anda.
               </p>
             </div>
           </div>
@@ -87,8 +87,7 @@ const StandLaluMultiplePage = () => {
             <div className="flex items-center">
               <Info className="h-5 w-5 text-gray-400 mr-3" />
               <p className="text-gray-600 text-sm">
-                Upload file Excel dan kami akan menemukan semua baris dengan nilai sama di kolom SLALWBP dan SAHLWBP. 
-                Hasil akan ditampilkan per sheet dan dapat diunduh dalam format Excel.
+                Upload file Excel dan kami akan menemukan semua baris dengan nilai stand ini dan stand lalu sama secara multiple sheet.
               </p>
             </div>
           </div>
@@ -179,6 +178,10 @@ const StandLaluMultiplePage = () => {
                 <li className="flex items-start">
                   <span className="text-amber-500 mr-2">•</span>
                   Hasil akan disimpan dengan nama file otomatis
+                </li>
+                <li className="flex items-start">
+                  <span className="text-amber-500 mr-2">•</span>
+                  Hasil akan menampilkan semua kolom dari baris yang sesuai kriteria
                 </li>
               </ul>
             </div>
