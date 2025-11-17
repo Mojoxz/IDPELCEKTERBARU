@@ -87,7 +87,7 @@ const Header = () => {
                     : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                 }`}
               >
-                Stand Lalu
+                Stand Sama
                 <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${standLaluDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               
@@ -103,7 +103,7 @@ const Header = () => {
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
                     >
-                      Stand Lalu Ini (SBB)
+                      Stand Sama (SBB)
                     </Link>
                     <Link
                       to="/stand-lalu-ini-sbu"
@@ -114,7 +114,7 @@ const Header = () => {
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
                     >
-                      Stand Lalu Ini (SBU)
+                      Stand Sama (SBU)
                     </Link>
                     <Link
                       to="/stand-lalu-multiple"
@@ -125,7 +125,7 @@ const Header = () => {
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
                     >
-                      Stand Lalu (Multiple)
+                      Stand Sama (Multiple)
                     </Link>
                   </div>
                 </div>
@@ -268,7 +268,7 @@ const Header = () => {
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
-                  <span>Stand Lalu</span>
+                  <span>Stand Sama</span>
                   <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileStandLaluDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 
@@ -286,7 +286,7 @@ const Header = () => {
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
                     >
-                      Stand Lalu Ini (SBB)
+                      Stand Sama (SBB)
                     </Link>
                     <Link
                       to="/stand-lalu-ini-sbu"
@@ -300,7 +300,7 @@ const Header = () => {
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
                     >
-                      Stand Lalu Ini (SBU)
+                      Stand Sama (SBU)
                     </Link>
                     <Link
                       to="/stand-lalu-multiple"
@@ -314,7 +314,7 @@ const Header = () => {
                           : 'text-gray-700 hover:bg-gray-50'
                       }`}
                     >
-                      Stand Lalu (Multiple)
+                      Stand Sama (Multiple)
                     </Link>
                   </div>
                 )}
