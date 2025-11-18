@@ -7,17 +7,20 @@ const Header = () => {
   const [standLaluDropdownOpen, setStandLaluDropdownOpen] = useState(false);
   const [idpelBaruDropdownOpen, setIdpelBaruDropdownOpen] = useState(false);
   const [idpelSamaDropdownOpen, setIdpelSamaDropdownOpen] = useState(false);
+  const [pemkwhDropdownOpen, setPemkwhDropdownOpen] = useState(false);
   
   // Mobile dropdown states
   const [mobileStandLaluDropdownOpen, setMobileStandLaluDropdownOpen] = useState(false);
   const [mobileIdpelBaruDropdownOpen, setMobileIdpelBaruDropdownOpen] = useState(false);
   const [mobileIdpelSamaDropdownOpen, setMobileIdpelSamaDropdownOpen] = useState(false);
+  const [mobilePemkwhDropdownOpen, setMobilePemkwhDropdownOpen] = useState(false);
   
   const location = useLocation();
   
   const standLaluRef = useRef(null);
   const idpelBaruRef = useRef(null);
   const idpelSamaRef = useRef(null);
+  const pemkwhRef = useRef(null);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -30,6 +33,9 @@ const Header = () => {
       }
       if (idpelSamaRef.current && !idpelSamaRef.current.contains(event.target)) {
         setIdpelSamaDropdownOpen(false);
+      }
+      if (pemkwhRef.current && !pemkwhRef.current.contains(event.target)) {
+        setPemkwhDropdownOpen(false);
       }
     };
 
@@ -80,6 +86,7 @@ const Header = () => {
                   setStandLaluDropdownOpen(!standLaluDropdownOpen);
                   setIdpelBaruDropdownOpen(false);
                   setIdpelSamaDropdownOpen(false);
+                  setPemkwhDropdownOpen(false);
                 }}
                 className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive('/stand-lalu-ini-sbb') || isActive('/stand-lalu-ini-sbu') || isActive('/stand-lalu-multiple')
@@ -139,6 +146,7 @@ const Header = () => {
                   setIdpelBaruDropdownOpen(!idpelBaruDropdownOpen);
                   setStandLaluDropdownOpen(false);
                   setIdpelSamaDropdownOpen(false);
+                  setPemkwhDropdownOpen(false);
                 }}
                 className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive('/idpel-baru-multiple') || isActive('/idpel-baru-1sheet')
@@ -187,6 +195,7 @@ const Header = () => {
                   setIdpelSamaDropdownOpen(!idpelSamaDropdownOpen);
                   setStandLaluDropdownOpen(false);
                   setIdpelBaruDropdownOpen(false);
+                  setPemkwhDropdownOpen(false);
                 }}
                 className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive('/idpel-sama-1sheet') || isActive('/idpel-sama-multiple')
@@ -227,6 +236,66 @@ const Header = () => {
                 </div>
               )}
             </div>
+
+            {/* PEMKWH Dropdown - NEW */}
+            <div className="relative" ref={pemkwhRef}>
+              <button
+                onClick={() => {
+                  setPemkwhDropdownOpen(!pemkwhDropdownOpen);
+                  setStandLaluDropdownOpen(false);
+                  setIdpelBaruDropdownOpen(false);
+                  setIdpelSamaDropdownOpen(false);
+                }}
+                className={`flex items-center px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  isActive('/PEMKWHFilterPage') || isActive('/PEMKWHSBBPage') || isActive('/PEMKWHSBUPage')
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                }`}
+              >
+                PEMKWH Filter
+                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${pemkwhDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {pemkwhDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden animate-fade-in">
+                  <div className="py-1">
+                    <Link
+                      to="/PEMKWHFilterPage"
+                      onClick={() => setPemkwhDropdownOpen(false)}
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isActive('/PEMKWHFilterPage')
+                          ? 'bg-blue-50 text-blue-600 font-medium'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      PEMKWH {">"} 10000
+                    </Link>
+                    <Link
+                      to="/PEMKWHSBBPage"
+                      onClick={() => setPemkwhDropdownOpen(false)}
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isActive('/PEMKWHSBBPage')
+                          ? 'bg-blue-50 text-blue-600 font-medium'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      PEMKWH SBB (Kolom K)
+                    </Link>
+                    <Link
+                      to="/PEMKWHSBUPage"
+                      onClick={() => setPemkwhDropdownOpen(false)}
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        isActive('/PEMKWHSBUPage')
+                          ? 'bg-blue-50 text-blue-600 font-medium'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      PEMKWH SBU (Kolom N)
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Mobile menu button */}
@@ -261,6 +330,7 @@ const Header = () => {
                     setMobileStandLaluDropdownOpen(!mobileStandLaluDropdownOpen);
                     setMobileIdpelBaruDropdownOpen(false);
                     setMobileIdpelSamaDropdownOpen(false);
+                    setMobilePemkwhDropdownOpen(false);
                   }}
                   className={`flex items-center justify-between w-full px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActive('/stand-lalu-ini-sbb') || isActive('/stand-lalu-ini-sbu') || isActive('/stand-lalu-multiple')
@@ -327,6 +397,7 @@ const Header = () => {
                     setMobileIdpelBaruDropdownOpen(!mobileIdpelBaruDropdownOpen);
                     setMobileStandLaluDropdownOpen(false);
                     setMobileIdpelSamaDropdownOpen(false);
+                    setMobilePemkwhDropdownOpen(false);
                   }}
                   className={`flex items-center justify-between w-full px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActive('/idpel-baru-multiple') || isActive('/idpel-baru-1sheet')
@@ -379,6 +450,7 @@ const Header = () => {
                     setMobileIdpelSamaDropdownOpen(!mobileIdpelSamaDropdownOpen);
                     setMobileStandLaluDropdownOpen(false);
                     setMobileIdpelBaruDropdownOpen(false);
+                    setMobilePemkwhDropdownOpen(false);
                   }}
                   className={`flex items-center justify-between w-full px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActive('/idpel-sama-1sheet') || isActive('/idpel-sama-multiple')
@@ -419,6 +491,73 @@ const Header = () => {
                       }`}
                     >
                       IDPEL Sama (Multiple)
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile PEMKWH Dropdown - NEW */}
+              <div>
+                <button
+                  onClick={() => {
+                    setMobilePemkwhDropdownOpen(!mobilePemkwhDropdownOpen);
+                    setMobileStandLaluDropdownOpen(false);
+                    setMobileIdpelBaruDropdownOpen(false);
+                    setMobileIdpelSamaDropdownOpen(false);
+                  }}
+                  className={`flex items-center justify-between w-full px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isActive('/PEMKWHFilterPage') || isActive('/PEMKWHSBBPage') || isActive('/PEMKWHSBUPage')
+                      ? 'bg-blue-50 text-blue-600'
+                      : 'text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  <span>PEMKWH Filter</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobilePemkwhDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {mobilePemkwhDropdownOpen && (
+                  <div className="pl-4 mt-1 space-y-1 animate-fade-in">
+                    <Link
+                      to="/PEMKWHFilterPage"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setMobilePemkwhDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                        isActive('/PEMKWHFilterPage')
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      PEMKWH {">"} 10000
+                    </Link>
+                    <Link
+                      to="/PEMKWHSBBPage"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setMobilePemkwhDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                        isActive('/PEMKWHSBBPage')
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      PEMKWH SBB (Kolom K)
+                    </Link>
+                    <Link
+                      to="/PEMKWHSBUPage"
+                      onClick={() => {
+                        setIsMenuOpen(false);
+                        setMobilePemkwhDropdownOpen(false);
+                      }}
+                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
+                        isActive('/PEMKWHSBUPage')
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      PEMKWH SBU (Kolom N)
                     </Link>
                   </div>
                 )}

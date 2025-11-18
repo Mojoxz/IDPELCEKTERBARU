@@ -84,6 +84,14 @@ const HomePage = () => {
       color: 'from-teal-400 to-teal-600',
       category: 'filter',
       featured: false
+    },
+  
+    {
+      id: 8,
+      title: 'Pemakian Lebih dari 10K',
+      description: 'Temukan IDPEL dengan pemakaian lebih dari 10.000 pada bulan berjalan',
+      icon: Search,
+      
     }
   ];
 

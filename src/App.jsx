@@ -9,6 +9,9 @@ import IDPELCekBaru1SheetPage from './features/idpelCekBaru1Sheet/IDPELCekBaru1S
 import IDPELSama1SheetPage from './features/idpelSama1Sheet/IDPELSama1SheetPage';
 import IDPELSamaMultiplePage from './features/idpelSamaMultiple/IDPELSamaMultiplePage';
 import StandLaluMultiplePage from './features/standLaluMultiple/StandLaluMultiplePage';
+import PEMKWHFilterPage from './features/pemkwhfilter/PEMKWHFilterPage';
+import PEMKWHSBBPage from './features/pemkwhSBB/PEMKWHSBBPage';
+import PEMKWHSBUPage from './features/pemkwhSBU/PEMKWHSBUPage';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
             <Route path="/idpel-sama-1sheet" element={<IDPELSama1SheetPage />} />
             <Route path="/idpel-sama-multiple" element={<IDPELSamaMultiplePage />} />
             <Route path="/stand-lalu-multiple" element={<StandLaluMultiplePage />} />
+            <Route path="/PEMKWHFilterPage" element={<PEMKWHFilterPage />} />
+            <Route path="/PEMKWHSBBPage" element={<PEMKWHSBBPage />} />
+            <Route path="/PEMKWHSBUPage" element={<PEMKWHSBUPage />} />
           </Routes>
         </main>
         <Footer />
