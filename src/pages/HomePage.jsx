@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FileSpreadsheet, GitCompare, Copy, Search, CheckCircle, Zap, Star, Users, Clock, Download, ArrowRight, Play, ChevronLeft, ChevronRight, Sparkles, TrendingUp, Shield, Rocket } from 'lucide-react';
+import { FileSpreadsheet, GitCompare, Copy, Search, CheckCircle, Zap, Star, Users, Clock, Download, ArrowRight, Play, ChevronLeft, ChevronRight, Sparkles, TrendingUp, Shield, Rocket, Filter, FileText, BarChart } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 
 const HomePage = () => {
@@ -85,13 +85,36 @@ const HomePage = () => {
       category: 'filter',
       featured: false
     },
-  
+    // Menu Cepat - PEMKWH Tools
     {
       id: 8,
-      title: 'Pemakian Lebih dari 10K',
-      description: 'Temukan IDPEL dengan pemakaian lebih dari 10.000 pada bulan berjalan',
-      icon: Search,
-      
+      title: 'PEMKWH Filter',
+      description: 'Filter data PEMKWH Untuk sheet SBS',
+      icon: Filter,
+      path: '/pemkwh-filter',
+      color: 'from-red-400 to-red-600',
+      category: 'pemkwh',
+      featured: true
+    },
+    {
+      id: 9,
+      title: 'PEMKWH SBB',
+      description: 'Cek data PEMKWH Untuk Sheet SBB',
+      icon: FileText,
+      path: '/pemkwh-sbb',
+      color: 'from-yellow-400 to-yellow-600',
+      category: 'pemkwh',
+      featured: false
+    },
+    {
+      id: 10,
+      title: 'PEMKWH SBU',
+      description: 'Filter data PEMKWH untuk Sheet SBU',
+      icon: BarChart,
+      path: '/pemkwh-sbu',
+      color: 'from-cyan-400 to-cyan-600',
+      category: 'pemkwh',
+      featured: false
     }
   ];
 
@@ -245,7 +268,7 @@ const HomePage = () => {
     : tools.filter(tool => tool.category === activeTab);
 
   return (
-<div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section with Carousel */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 opacity-50"></div>
@@ -539,6 +562,16 @@ const HomePage = () => {
               >
                 Duplicate Check
               </button>
+              <button
+                onClick={() => setActiveTab('pemkwh')}
+                className={`px-4 md:px-6 py-2 rounded-full font-medium transition-all duration-300 text-sm md:text-base whitespace-nowrap ${
+                  activeTab === 'pemkwh'
+                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                OverPemkwh
+              </button>
             </div>
           </div>
 
@@ -626,47 +659,47 @@ const HomePage = () => {
         </div>
       </div>
 
-{/* Promotion Section */}
-<div className="py-12 md:py-20 bg-gradient-to-r from-blue-50 to-purple-50">
-  <div className="max-w-4xl mx-auto px-4 text-center">
-    <div className="bg-white rounded-2xl md:rounded-3xl p-8 md:p-12 shadow-xl">
-      <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
-        Ready to Transform Your Data Workflow?
-      </h2>
-      <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto">
-        Join thousands of professionals who have revolutionized their Excel data processing. 
-        Start your journey towards more efficient analysis today.
-      </p>
-      <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
-        <Link
-          to="/stand-lalu-ini-sbb"
-          className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
-        >
-          Start Using for Free
-          <ArrowRight className="ml-2 h-5 w-5" />
-        </Link>
-        <button className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-gray-200 text-gray-700 font-bold rounded-xl hover:border-gray-300 hover:bg-gray-50 transition-all duration-300">
-          <Play className="mr-2 h-5 w-5" />
-          Watch Quick Tour
-        </button>
+      {/* Promotion Section */}
+      <div className="py-12 md:py-20 bg-gradient-to-r from-blue-50 to-purple-50">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="bg-white rounded-2xl md:rounded-3xl p-8 md:p-12 shadow-xl">
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+              Ready to Transform Your Data Workflow?
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto">
+              Join thousands of professionals who have revolutionized their Excel data processing. 
+              Start your journey towards more efficient analysis today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+              <Link
+                to="/stand-lalu-ini-sbb"
+                className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              >
+                Start Using for Free
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+              <button className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border-2 border-gray-200 text-gray-700 font-bold rounded-xl hover:border-gray-300 hover:bg-gray-50 transition-all duration-300">
+                <Play className="mr-2 h-5 w-5" />
+                Watch Quick Tour
+              </button>
+            </div>
+            <div className="mt-6 md:mt-8 flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base text-gray-600">
+              <div className="flex items-center">
+                <CheckCircle className="h-4 w-4 md:h-5 md:w-5 mr-2 text-green-500" />
+                No registration required
+              </div>
+              <div className="flex items-center">
+                <Shield className="h-4 w-4 md:h-5 md:w-5 mr-2 text-blue-500" />
+                Process files locally
+              </div>
+              <div className="flex items-center">
+                <Download className="h-4 w-4 md:h-5 md:w-5 mr-2 text-purple-500" />
+                Export to Excel
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="mt-6 md:mt-8 flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base text-gray-600">
-        <div className="flex items-center">
-          <CheckCircle className="h-4 w-4 md:h-5 md:w-5 mr-2 text-green-500" />
-          No registration required
-        </div>
-        <div className="flex items-center">
-          <Shield className="h-4 w-4 md:h-5 md:w-5 mr-2 text-blue-500" />
-          Process files locally
-        </div>
-        <div className="flex items-center">
-          <Download className="h-4 w-4 md:h-5 md:w-5 mr-2 text-purple-500" />
-          Export to Excel
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
       {/* Footer CTA */}
       <div className="py-12 md:py-16 bg-gray-900">
